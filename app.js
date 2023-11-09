@@ -173,3 +173,12 @@ server.listen(PORT, (err)=>{
         console.log("SERVER ID LISTENING NOW ON PORT", PORT)
     }
 })
+
+/* 
+
+환장하겠다 증말 
+해놓고 테스트도 할 줄 몰라 
+이게 뭐하자는 건지 증말 
+홍의선? 중탈 레츠고!
+
+*/
