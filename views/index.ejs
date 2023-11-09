@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="/index.css">   
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>   
+</head>
+<body>
+
+    <script src="/socket.io/socket.io.js"></script>
+    
+    <header id="head">
+      <div id="head2">
+        <button id="home">HOME</button>
+        <% if(loginState === false) { %>
+        <button id="list1" onclick="alert('로그인하시오')">저장소</button>
+        <% } else { %>
+          <button id="list1">저장소</button>
+        <% } %>
+      </div>
+      <div id="head3">
+        <h1 id="logo">SMART FARM</h1>
+      </div>
+      <% if(loginState === false) { %>
+        <div id="head4" style="background-image: url(/img/free-icon-user-5264565.png); width: 40px; height: 40px;" >
+          <a href="http://localhost:3000/login" style="font-size: 40px; width: 50px; color: rgba(255, 255, 255, 0);"> a</a>
+        </div>
+      <% } else { %>
+        <form title="클릭하면 로그아웃합니다" action="/logout" method="get" style="background-image: url(/img/free-icon-sign-out-12513860.png); background-size: 100% 100%;">
+          <a href="/logout" id="logout" style="font-size: 70px; width: 60px; color: rgba(255, 255, 255, 0);">a</a>
+        </form>
+      <% } %>
+    </header>
+    
+    <main>
+        <section id="part1">
+            
+          <ul class="slider">
+            <li id="img1" style="background-image:url('/img/GettyImages-1221295543-scaled.jpg')"></li>                             
+            <li id="img2" style="background-image:url('/img/qweqweqweqweqweqweqwe.jpg');"></li>
+            <li id="img3" style="background-image:url('/img/smartF2.jpeg')"></li>
+            <li id="img4" style="background-image:url('/img/smartF3.png')"></li>              
+          </ul>
+            
+          <div class="btn" >
+            <button type="button" id="prev" style="border: none;"><</button>
+            <button type="button" id="next" style="border: none;">></button>
+          </div>
+        </section>       
+    </main>
+
+    <div id="ps4">
+      <div id="icon8" style="background-image: url('/img/peppers-7075495_640.png'); border-radius: 50%;">
+        
+      </div>    
+        <div id="ps4text">
+          <h1 style="color: green; font-size: 70px;" >smart</h1>
+          <h1 style="color: green; font-size: 60px;"> farm</h1>
+          <br>
+          <br>
+          <p style="font-size: 17px;">스마트 팜은 인공지능과 빅데이터 분석을 통해 농작물 상태를 모니터링하며,</p>
+          <br>
+          <p style="font-size: 17px;"> 물, 비료 및 에너지를 최적으로 관리하여 농업 생산성을 향상시키는 혁신적인 농업 방식입니다.</p>
+        </div>
+      <br>
+             
+    </div>
+
+    <div id="ps">
+        <div id="icon" style="background-image: url('/img/cloud-computing-2001090_640.jpg');">
+          <div class="overlay">
+            <div class="text">식물의 상태를 24시간 지켜본다</div>
+          </div>
+          <div>
+            <br>
+            <h1 id="tag" style="font-size: 50px; margin-top: 280px; color: rgb(0, 0, 0); background-color: rgba(255, 255, 255, 0.637);width: 300px;">서비스</h1>
+          </div>
+        </div>      
+        <div id="icon2" style="background-image: url('/img/istockphoto-1214228429-170667a.jpg');">
+          <div class="overlay">
+            <div class="text">온,습도를 최적의 상태로 유지</div>
+          </div>
+          <div>
+            <br>
+            <h1 id="tag" style="font-size: 50px; margin-top: 280px; color: rgb(0, 0, 0); background-color: rgba(255, 255, 255, 0.637); width: 300px;">온습도 센서</h1>
+          </div>
+        </div>
+        <div id="icon5" style="background-image: url('/img/art_15674796768521_3446d56.png');">
+          <div class="overlay">
+            <div class="text">LED로 식물에게 필요한 빛을 제공</div>
+          </div>
+          <div>
+            <br>
+            <h1 id="tag" style="font-size: 50px; margin-top: 280px; color: rgb(0, 0, 0); background-color: rgba(255, 255, 255, 0.637);width: 300px;">LED조명</h1>
+          </div>
+        </div>
+        <div id="icon2" style="background-image: url('/img/sun-161923_640.png');">
+          <div class="overlay">
+            <div class="text">조도를 측정하여 빛이 필요할 때를 파악함</div>
+          </div>
+          <div>
+            <br>
+            <h1 id="tag" style="font-size: 50px; margin-top: 280px; color: rgb(0, 0, 0); background-color: rgba(255, 255, 255, 0.637); width: 300px;">조도 센서</h1>
+          </div>
+        </div>
+    </div>
+
+    <div id="ps3">
+      <div id="ps4text">
+        <h1 style="color: green; font-size: 60px;" >smart</h1>
+        <h1 style="color: green; font-size: 60px;"> farm</h1>
+        <br>
+        <br>
+        <p style="font-size: 20px;">스마트 팜은 생산성 향상과 자원 절약을 통해 농작물 생산을 개선하며</p>
+        <p style="font-size: 20px;">농부들에게 농업 관리를 용이하게 합니다.</p>
+        <p style="font-size: 20px;">빅데이터와 인공지능을 활용하여 예측과 경영 결정을 지원하며</p>
+        <p style="font-size: 20px;">농산물 품질을 향상시켜 고품질 제품을 양산합니다.</p>
+      </div>  
+      <div id="icon7" style="background-image: url('/img/tomato-2522368_640.jpg'); border-radius: 50%;"></div>  
+                
+    </div>
+
+    <div id="ps2">
+      <iframe id="ion3" width="600" height="300" src="https://www.youtube.com/embed/97JZMrnRnYM?si=a5EOp1VGppMJ71JO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="margin-left: 100px;"></iframe>
+      
+      <iframe id="icon4"width="600" height="300" src="https://www.youtube.com/embed/HSPBtjYgnOA?si=xlzoIPr5km1WCvBG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="margin-right: 100px;"></iframe>
+    </div>
+    <div id="ps5">
+      <div id="ps5text">
+        <p style="color: green; margin-left: 100px;" >기관: 미래육합교육원</p>
+        <br>
+        <p style="color: green; margin-left: 100px;">제작: 전석범, 홍의선</p>
+        <br>
+        
+      </div>  
+      <div id="ps5text2">
+        <p style="font-size: 12px; margin-right: 400px;">주소: 대전 서구 계룡로491번길 86 미래융합교육원</p>
+        <br>
+        <p style="font-size: 12px; margin-right: 400px;">전화번호: 000-0000-0000</p>
+        <br>
+        <p style="font-size: 12px; margin-right: 400px;">이메일: 000@0000.com</p>
+      </div>
+      <div id="icon9" style="background-image: url('/img/monstera-7578722_640.png'); border-radius: 50%; margin-right: 100px;"></div>  
+                
+    </div>
+    <script src="/index.js"></script>
+</body>
+
+</html>

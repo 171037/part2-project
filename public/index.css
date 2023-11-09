@@ -1,0 +1,271 @@
+@font-face {
+    font-family: 'SOYOMapleBoldTTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'TAEBAEKfont';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'SOYOMapleBoldTTF';
+}
+html
+{
+  background-color: #ffffff;
+}
+#home, #list2, #list1
+{
+  cursor:pointer;
+  margin-right: 50px;
+  
+}
+
+#logo
+{
+  font-family: 'TAEBAEKfont';
+  color: rgb(0, 0, 0);
+}
+body {
+  
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+#head
+{
+  
+  display: flex;  
+  justify-content: space-between;  
+  padding: 20px;
+  background-color: #ffffff;
+  
+  
+}
+#head2, #head4
+{
+  display: flex;
+  
+  
+}
+#head3 {
+  margin-right: 255px;
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  
+}
+#head4
+{
+  background-size: 100% 100%;
+}
+h1
+{
+  color: rgb(0, 0, 0);
+}
+main 
+{
+  
+  max-width: 100%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+}
+body, section, ul
+{
+  margin:0;
+  padding:0;
+}
+.slider {
+  
+  list-style:none;
+  height:600px;
+  overflow:hidden;
+}
+.slider:after {   
+  content:'';
+  display:block;
+  clear:both;
+}
+.slider li {
+  
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+}
+#img1, #img2, #img3, #img4
+{
+  
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  
+}
+
+.btn 
+{
+  text-align:center;
+}
+.btn button 
+{
+  border:1px solid #ccc;
+  background-color:#fff;
+  color:#000000;
+  font-size:15px;
+  width: 25%;
+  cursor:pointer;
+}
+#icon,
+#icon2,
+#icon5
+{
+  display: flex;
+  height: 400px;
+  width: 300px;
+  background-size: 100% 100%;
+  overflow: hidden;
+  margin: 50px;
+  position: relative;
+  font-size: 50px;
+}
+#icon3,
+#icon4
+{
+  display: flex;
+  height: 300px;
+  width: 600px;
+  background-size: 100% 100%;
+  overflow: hidden;
+  margin: 50px;
+  position: relative;
+  font-size: 50px;
+}
+
+#icon7
+{
+  float: left;
+  display: flex;
+  height: 400px;
+  width: 400px;
+  background-size: 100% 100%;
+  
+  margin-right: 30px;
+  position: relative;
+}
+#icon8
+{
+  float: right;
+  display: flex;
+  height: 350px;
+  width: 400px;
+  background-size: 100% 100%; 
+  margin-left: 30px;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 85%;
+  background: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#icon:hover .overlay,
+#icon2:hover .overlay,
+#icon3:hover .overlay,
+#icon4:hover .overlay,
+#icon5:hover .overlay {
+  opacity: 1;
+}
+#ps4
+{
+  background-color: rgba(255, 145, 0, 0.233);
+  height: 750px;
+  display: flex; 
+  align-items: center;
+}
+#ps4text
+{
+  margin-top: 50px;
+  margin-left: 200px;
+}
+#ps
+{
+  align-items: center;
+  height: 1000px;
+  display: flex;
+  justify-content: center;
+}
+
+#ps3
+{
+  align-items: center;
+  justify-content: space-between;
+  height: 750px;
+  display: flex;
+  background-color: rgba(255, 99, 71, 0.486);
+}
+
+#ps2
+{
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#tag
+{
+  
+  position: relative;
+}
+/* @media (max-width: 768px) {
+  #icon,
+  #icon2,
+  #icon3,
+  #icon4 {
+    height: 200px;
+    width: 200px;
+  }
+} */
+.banner2
+{
+  height: 300px;
+  background-size: 100% 100%;
+}
+#ps5
+{
+  border: 2px solid green;
+  align-items: center;
+  justify-content: space-between;
+  height: 200px;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+}
+#icon9
+{
+  
+  display: flex;
+  height: 100px;
+  width: 100px;
+  background-size: 100% 100%;
+  margin-left: 30px;
+  position: relative;
+}

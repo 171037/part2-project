@@ -1,0 +1,261 @@
+@font-face {
+  font-family: 'SOYOMapleBoldTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TAEBAEKfont';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TTWanjudaedunsancheB';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/TTWanjudaedunsancheB.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'SOYOMapleBoldTTF';
+}
+#logo
+{
+font-family: 'TAEBAEKfont';
+color: rgb(0, 0, 0);
+}
+#home, #list2, #list1
+{
+cursor:pointer;
+margin-right: 50px;
+}
+body 
+{ 
+ 
+width: 100%;
+background-size: 100%;
+
+
+font-family: Arial, sans-serif;
+background-color: white;
+}
+#all
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#head
+{
+display: flex;  
+justify-content: space-between;  
+padding: 20px;
+background-color: #ebebeb;
+margin-bottom: 50px;
+
+}
+#head2, #head4
+{
+display: flex;
+
+
+}
+
+#head3 {
+margin-right: 255px;
+display: flex;
+justify-content: center; /* 수평 가운데 정렬 */
+align-items: center; /* 수직 가운데 정렬 */ 
+}
+#head4
+{
+  background-size: 100% 100%;
+}
+#part
+{
+display: flex;
+}
+#part1
+{
+display: flex;
+
+}
+
+
+main
+{  
+
+display: flex;
+width: 1200px;
+justify-content: center;
+padding: 20px;
+
+
+}
+/* #tem
+{
+background-color: rgb(255, 255, 255);
+width: 100%;
+max-width: 500px;
+
+height: 100%; 
+}*/
+#data
+{
+  width: 800px;
+}
+
+
+#timepart
+{
+  display: flex;
+  justify-content: center;
+}
+#time
+{
+  
+  
+  display: flex;
+  justify-content: space-evenly;
+  width: 800px; 
+  height: 55px;  
+  background-color: #ffffff;
+}
+#timeset
+{
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+}
+#clock, #clock2, #clock3
+{
+width: 160px;
+font-size: 20px;
+
+}
+#temper, #hum, #br
+{
+font-family: 'TTWanjudaedunsancheB';
+position: relative;
+font-size: 40px;
+justify-content: center;
+align-items: center;
+border-radius: 15px;
+
+display: flex;
+height: 60px;
+max-width: 100px;
+width: 100%;
+
+}
+#temper
+{
+background-color: white;
+color: red;
+}
+#traffic
+{
+position: relative;
+width: 100px;
+height: 60px;
+}
+#traffic2
+{
+position: relative;
+width: 100px;
+height: 60px;
+}
+#hum
+{
+background-color: white;
+color: blue;
+}
+#br
+{
+background-color: white;
+color: rgb(0, 0, 0);
+}
+#war
+{
+  margin-top: 28px;
+  justify-content: space-evenly;
+
+  position: relative;
+  display: flex;
+  height: 110px;
+}
+#temperset, #brset, #humset
+{
+  display: flex;
+  flex-direction: column;
+}
+#controlpad
+{
+  width: 1000px;
+}
+#conbtn
+{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+ #brbtn, #humbtn
+{
+  height: 50px;
+  width: 60px;
+}
+.toggleSwitch {
+  width: 100px;
+
+  height: 50px;
+  display: block;
+  position: relative;
+  border-radius: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 16px 3px rgba(0 0 0 / 15%);
+  cursor: pointer;
+}
+
+.toggleSwitch .toggleButton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: #f03d3d;
+}
+
+.toggleSwitch.active {
+  background: #f03d3d;
+}
+
+.toggleSwitch.active .toggleButton {
+  left: calc(100% - 44px);
+  background: #fff !important;
+}
+
+.toggleSwitch, .toggleButton {
+  transition: all 0.2s ease-in;
+}
+
+.toggleSwitch.blue.active {
+  background: #5151e5;
+}
+
+.toggleSwitch.blue .toggleButton {  
+  background: #5151e5;
+}
+.toggleSwitch.green.active {
+  background: rgb(236, 232, 0);
+}
+
+.toggleSwitch.green .toggleButton {  
+  background: rgb(236, 232, 0);
+}

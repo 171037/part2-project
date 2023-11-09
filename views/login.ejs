@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="/login.css">   
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>   
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <header id="head">
+        <div id="head2">
+          <button id="home">HOME</button>
+          <button id="list1">저장소</button>
+          
+        </div>
+        <div id="head3">
+          <h1 id="logo">SMART FARM</h1>
+        </div>
+        <div id="head4" style="background-color: rgba(255, 255, 255, 0); width: 40px; height: 40px; background-size: 100% 100%;" >
+          <p style="font-size: 40px; width: 50px; color: rgba(255, 255, 255, 0);"> a</p>
+        </div>
+      </header>
+      <div id="logbanner" style="width: 100%;">
+        <div id="logtext" style="color: green; width: 480px; height: 25px;">로그인</div>
+      </div>
+      <main>
+        <form method="post" action="/login/submit">
+          <div id="login">
+            <div id="logtext2" style="color: green; width: 400px; height: 35px;">
+              <div style="background-image: url(/img/lock-152879_640.png); width: 30px; background-size: 100% 100%; margin-right: 3px;"></div>
+              <input name="email" type="email" placeholder="아이디....." style=" border: none; width: 377px;">
+            </div>
+          </div>
+          <div id="login">
+            <div id="logtext3" style="color: green; width: 400px; height: 35px;">
+              <div style="background-image: url(/img/key-1294351_640.png); width: 30px; background-size: 100% 100%; margin-right: 3px;"></div>
+              <input name="password" type="password" placeholder="비밀번호....." style=" border: none; width: 377px; ">
+            </div>     
+          </div>
+          <div id="log">
+            <button id="logselect" type="submit" style="width: 200px; height: 50px; margin-top: 60px; font-size: 30px;" >
+              <p style="margin-top:5px ;">로그인</p>
+            </button>
+          </div>
+        </form>
+      </main>
+      <div id="dolog">
+        <a href="http://localhost:3000/members" color="green">회원가입</a>
+      </div>
+    <script src="/login.js"></script>
+</body>
+
+</html>

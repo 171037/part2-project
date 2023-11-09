@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <link rel="stylesheet" href="/storage.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <header id="head">
+        <div id="head2">
+            <button id="home">HOME</button>
+            <button id="list1">저장소</button>
+        </div>
+        <div id="head3">
+            <h1 id="logo">SMART FARM</h1>
+        </div>
+        <% if(loginState === false) { %>
+            <div id="head4" style="background-image: url(/img/free-icon-user-5264565.png); width: 40px; height: 40px;" >
+                <a href="http://localhost:3000/login" style="font-size: 40px; width: 50px; color: rgba(255, 255, 255, 0);"> a</a>
+            </div>
+            <% } else { %>
+                <form action="/logout" method="get" style="background-image: url(/img/free-icon-sign-out-12513860.png); background-size: 100% 100%;">
+                  <a href="/logout" id="logout" style="font-size: 70px; width: 60px; color: rgba(255, 255, 255, 0);">a</a>
+                </form>
+            <% } %>
+    </header>
+    
+<div id="all">
+    <div id="timeset" style="width: 1000px ;">
+            <p style="width: 150px; margin-left: 25px; font-size: 20px;">서울</p>
+            <p style="width: 150px; font-size: 20px;">캔버라</p>
+            <p style="width: 150px; margin-right: 30px; font-size: 20px;">워싱턴D.C</p>
+    </div>
+
+
+
+    <div id="timepart">
+        <div id="time" style="width: 1000px;">
+            <p id="clock" style="color:black; text-align: center; margin-left:25px ;">clock</p>     
+            <p id="clock2" style="color:black; text-align: center;">clock2</p>   
+            <p id="clock3" style="color:black; text-align: center; margin-right: 25px;">clock3</p>   
+        </div>  
+    </div> 
+    
+
+    <div id="controlpad" style=" background-color: white;"> 
+        <div id="war">
+            <div id="temperset" style="width: 100px;">
+                <div style=" width: 60px; height: 40px; background-size: 100% 100%; margin-left: 20px;">
+                    <p style="font-size: 30px;">온도</p>
+                </div>
+                <div id="temper"></div>
+            </div>
+            <div id="humset" style="width: 100px;">
+                <div style=" width: 60px; height: 40px; background-size: 100% 100%; margin-left: 20px;">
+                    <p style="font-size: 30px;">습도</p>
+                </div>               
+                <div id="hum"></div>
+            </div>
+            <div id="brset" style="width: 100px;">
+                <div style=" width: 60px; height: 40px; background-size: 100% 100%; margin-left: 20px;">
+                    <p style="font-size: 30px;">조도</p>
+                </div>               
+                <div id="br"></div> 
+            </div>
+        </div>  
+
+        <div id="conbtn" style="margin-top: 10px;">
+            <label for="toggle" class="toggleSwitch">
+            <span class="toggleButton"></span>
+            </label>
+            <label for="toggle" class="toggleSwitch blue">
+            <span class="toggleButton"></span>
+            </label>
+            <label for="toggle" class="toggleSwitch green">
+            <span class="toggleButton"></span>
+            </label>
+        </div>
+    </div> 
+    <main id="info">                     
+        <div>                                     
+            <table border="2" id="data">
+            
+                <tr>
+                    <th>시간</th>
+                    <th>온도</th>
+                    <th>습도</th>
+                    <th>조도</th>
+            
+                </tr>
+            
+            </table>               
+        </div> 
+    </main> 
+
+</div>    
+
+    
+    <script src="storage.js"></script>
+    <script>
+        function drawTable(){
+            const request = new XMLHttpRequest()
+            request.open("GET", "http://localhost:3000/get-data")
+            request.addEventListener("load", function(){
+                console.log(JSON.parse(request.response))
+                const data = JSON.parse(request.response)
+                // foreach 
+                
+                document.getElementById("data").innerHTML =`
+                <tr>
+                    <th>시간</th>
+                    <th>온도</th>
+                    <th>습도</th>
+                    <th>조도</th>
+                </tr>
+                `
+                data.forEach((data)=>{
+                    const tableRow = document.createElement("tr")
+                    tableRow.innerHTML = `
+                    <td>${data.sen_time}</td>
+                    <td>${data.sen_temp}</td>
+                    <td>${data.sen_humi}</td>
+                    <td>${data.sen_bright}</td>
+                    `
+                    
+                    document.getElementById("data").appendChild(tableRow)
+                    
+                })
+            const tempData = data[data.length - 1];
+            if (tempData && tempData.sen_temp >= 23) 
+            {
+                document.getElementById("temper").innerHTML = '<img id="traffic" src="img/traffic-light-149581_640.png" alt="경고">';
+            } 
+            else
+            {
+                document.getElementById("temper").innerHTML = '<img id="traffic2" src="img/traffic-light-149580_640.png" alt="정상">';
+            }
+            const humiData = data[data.length - 1];
+            if (humiData && humiData.sen_humi > 50) 
+            {
+                document.getElementById("hum").innerHTML = '<img id="traffic" src="img/traffic-light-149581_640.png" alt="경고">';
+            } 
+            else 
+            {
+                document.getElementById("hum").innerHTML = '<img id="traffic2" src="img/traffic-light-149580_640.png" alt="정상">';
+            }
+            const brData = data[data.length - 1];
+            if (brData && brData.sen_bright > 700) 
+            {
+                document.getElementById("br").innerHTML = '<img id="traffic" src="img/traffic-light-149581_640.png" alt="경고">';
+            } 
+            else 
+            {
+                document.getElementById("br").innerHTML = '<img id="traffic2" src="img/traffic-light-149580_640.png" alt="정상">';
+            }
+
+            })
+            
+            request.send()
+        }
+        
+        drawTable()
+        setInterval(drawTable, 10000)
+    </script>
+    <script>
+        var Target = document.getElementById("clock");
+        function clock() {
+            var time = new Date();
+
+            var month = time.getMonth();
+            var date = time.getDate();
+            var day = time.getDay();
+            var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+            var hours = time.getHours();
+            var minutes = time.getMinutes();
+            var seconds = time.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+    
+            if (hours > 12) {
+                hours -= 12;
+            }
+
+        document.getElementById("clock").innerText =
+            `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+            `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds} ${ampm}`;
+}
+                
+        
+        clock();
+        setInterval(clock, 1000);
+        function clock2() {
+    var time = new Date();
+
+    var month = time.getMonth();
+    var date = time.getDate();
+    var day = time.getDay();
+    var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+    var hours = time.getHours()+2;
+    var minutes = time.getMinutes();
+    var seconds = time.getSeconds();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    
+    if (hours > 12) {
+        hours -= 12;
+    }
+
+    document.getElementById("clock2").innerText =
+        `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+        `${hours < 10 ? `0${hours}` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds} ${ampm}`;
+}
+clock2();
+setInterval(clock2, 1000);
+
+function clock3() {
+    var time = new Date();
+
+    var month = time.getMonth();
+    var date = time.getDate()-1;
+    var day = time.getDay()-1;
+    var week = ['일', '월', '화', '수', '목', '금', '토'];
+
+    var hours = time.getHours()-2;
+    var minutes = time.getMinutes();
+    var seconds = time.getSeconds();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+
+    if (hours > 12) {
+        hours -= 12;
+    }
+
+document.getElementById("clock3").innerText =
+    `${month + 1}월 ${date}일 ${week[day]}요일 ` +
+    `${hours < 10 ? `0${hours }` : hours}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10 ? `0${seconds}` : seconds} ${ampm}`;                
+}
+clock3();        
+setInterval(clock3, 1000);
+</script>
+    
+</body>
+</html>

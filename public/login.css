@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'SOYOMapleBoldTTF';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/SOYOMapleBoldTTF.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'TAEBAEKfont';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/TAEBAEKfont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'SOYOMapleBoldTTF';
+}
+#logo
+{
+font-family: 'TAEBAEKfont';
+color: rgb(0, 0, 0);
+}
+#home, #list2, #list1
+{
+cursor:pointer;
+margin-right: 50px;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+}
+#name
+{
+color: yellow;
+}
+#head
+{
+
+display: flex;  
+justify-content: space-between;
+
+padding: 20px;
+background-color: #ebebeb;
+margin-bottom: 150px;
+
+}
+#head2, #head4
+{
+display: flex;
+
+}
+#head3 {
+margin-right: 255px;
+display: flex;
+justify-content: center; /* 수평 가운데 정렬 */
+align-items: center; /* 수직 가운데 정렬 */
+}
+#head4
+{
+  background-size: 100% 100%;
+}
+main
+{
+display: flex;
+max-width: 480px;
+margin: 0 auto;
+height: 300px;
+background-color: #ffffff;
+border: none;
+margin-bottom: 10px;
+border-radius: 0px 0px 30px 30px;
+justify-content: center;
+flex-direction: column;
+}
+#login
+{
+display: flex;
+justify-content: center;
+}
+#logbanner
+{
+display: flex;
+justify-content: center;
+}
+#log
+{
+
+display: flex;
+justify-content: center;
+}
+#logtext
+{
+
+display: flex;
+justify-content: center;
+border: 3px rgb(134, 134, 134) solid;
+border-bottom: none;
+border-radius: 10px 10px 0px 0px;
+}
+#logtext2
+{
+position: relative;
+display: flex;
+border-radius: 5px;
+border: 2px rgb(134, 134, 134) solid;
+}
+#logtext3
+{
+position: relative;
+
+display: flex;
+border-radius: 5px;
+border: 2px rgb(134, 134, 134) solid;
+
+}
+#logselect
+{
+display: flex;
+justify-content: center;
+}
+#dolog
+{
+display: flex;
+justify-content: center;
+}
+#banner
+{
+font-family: 'GangwonEduPowerExtraBoldA';
+display: flex;
+justify-content: center;
+color: white;
+font-size: 40px;
+}
+#img
+{
+max-width: 1200px;
+margin: 0 auto;
+height: 600px;
+background-size: 100% 100%;
+justify-content: center;
+
+}
+#text
+{
+font-family: 'GangwonEduPowerExtraBoldA';
+color: white;
+
+}
+#infotext, #infotext2
+{
+margin: 15px;
+font-family: 'GangwonEduPowerExtraBoldA';
+}
+#infotext
+{
+font-size: 60px;
+}
+#infotext2
+{
+font-size: 30px;
+}
+#infopart, #infopart2
+{
+display: flex;
+justify-content: space-around;
+
+}
+#img2, #img3, #img4, #img5
+{
+position: relative;
+margin-top: 60px;
+width: 600px;
+height: 400px;
+background-size: 100% 100%;
+}
+#img2,#img4
+{
+margin-right: 50px;
+margin-left: 200px;
+}
+#img3,#img5
+{
+margin-left: 50px;
+margin-right: 200px;
+}
