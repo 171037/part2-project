@@ -14,9 +14,7 @@ $(document).ready(function() {
     $("#list2").click(function(){
         $(location).attr("href", "http://localhost:3000/members")  
     })
-    // $('#head4').click(function(){
-    //     alert("팀원 : 전석범, 홍의선")
-    //   })
+ 
     $("#head").height("50px")
 
     $("#home, #list1, #list2, #name").css({

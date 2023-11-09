@@ -236,15 +236,7 @@ body, section, ul
   
   position: relative;
 }
-/* @media (max-width: 768px) {
-  #icon,
-  #icon2,
-  #icon3,
-  #icon4 {
-    height: 200px;
-    width: 200px;
-  }
-} */
+
 .banner2
 {
   height: 300px;

@@ -7,7 +7,6 @@ $(document).ready(function() {
             $toggle.classList.add( "active")
         }
     });
-    
 
     toggleList.forEach(($toggle, index) => {
         $toggle.onclick = () => {
@@ -16,10 +15,6 @@ $(document).ready(function() {
             localStorage.setItem(`toggleState_${index+1}`, $toggle.classList.contains("active"));
         }
     });
-
-
-
-    
 
     $("#home").click(function() {
         $(location).attr("href", "http://localhost:3000/")           
@@ -39,15 +34,6 @@ $(document).ready(function() {
         border : "none", 
         fontSize : "20px"  
     });
-    $("main").css({
-        // borderTop: "1px solid gray",
-        // borderRight: "1px solid gray",
-        // borderLeft: "1px solid gray",
-        // borderBottom: "1px solid gray",
-        
-        
-    })
-
 
     $("#home").width("60px")
     $("#list1").width("60px")
